@@ -1,39 +1,38 @@
 # Yun Zhang Portfolio Website
 
-This version updates the homepage introduction to better match a Data Engineer role such as CVS Health.
+This version updates the homepage portrait into a larger cinematic-style image treatment.
 
-## Main update
+## What changed
 
-The hero section no longer over-focuses on Flask/SQLAlchemy. It now emphasizes:
+The homepage now uses:
 
-- ETL-style data processing
-- data cleaning and standardization
-- structured data modeling
-- database-backed applications
-- healthcare analytics
-- machine learning workflow integration
-- IT risk advisory / data governance background
-- reliable data systems for analytics, automation, and business decision-making
+- a large portrait panel on the right side
+- a blurred version of `profile.jpg` as the background
+- the same `profile.jpg` layered in the foreground
+- a soft overlay to create a cinematic / editorial effect
 
-## Resume PDF
+This creates the effect of:
+- a larger image area
+- background blur
+- a more polished visual style
+- a more modern homepage hero
 
-The Resume buttons link to:
+## How to use your own photo
 
-`Yun_Zhang_Resume.pdf`
+1. Rename your professional photo to `profile.jpg`
+2. Upload it to the repository root
+3. Replace the placeholder `profile.jpg`
+4. Commit changes
+5. Wait 1–5 minutes for GitHub Pages to update
 
-Upload your resume PDF to the repository root and name it exactly:
+## Repository root should contain
 
-`Yun_Zhang_Resume.pdf`
-
-## Knee X-ray Report PDF
-
-The Knee X-ray Report button links to:
-
-`Knee_Xray_Report.pdf`
-
-Upload your Knee X-ray report PDF to the repository root and name it exactly:
-
-`Knee_Xray_Report.pdf`
+- `index.html`
+- `style.css`
+- `README.md`
+- `profile.jpg`
+- `Yun_Zhang_Resume.pdf`
+- `Knee_Xray_Report.pdf`
 
 ## Still need to replace
 
