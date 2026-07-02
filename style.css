@@ -85,66 +85,93 @@ nav a:hover {
   max-width: 920px;
 }
 
-.hero-photo-panel {
+.hero-portrait-panel {
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.hero-cinematic-card {
-  position: relative;
-  width: min(430px, 82vw);
-  aspect-ratio: 0.9 / 1.15;
-  border-radius: 40px;
-  overflow: hidden;
-  border: 1px solid rgba(221, 212, 200, 0.9);
-  box-shadow: 0 28px 70px rgba(20, 20, 20, 0.18);
-  background: linear-gradient(145deg, rgba(255,255,255,0.48), rgba(239,233,223,0.72));
-}
-
-.hero-cinematic-bg {
+.portrait-glow {
   position: absolute;
-  inset: -8%;
-  background-image: url('profile.jpg');
-  background-size: cover;
-  background-position: center;
-  filter: blur(26px) saturate(1.05);
-  transform: scale(1.12);
-  opacity: 0.95;
-}
-
-.hero-cinematic-overlay {
-  position: absolute;
-  inset: 0;
+  width: min(310px, 68vw);
+  aspect-ratio: 1 / 1;
+  border-radius: 999px;
   background:
-    linear-gradient(180deg, rgba(18, 20, 24, 0.06) 0%, rgba(18, 20, 24, 0.18) 100%),
-    radial-gradient(circle at 50% 18%, rgba(255,255,255,0.34), rgba(255,255,255,0.02) 45%);
-  z-index: 1;
+    radial-gradient(circle at 35% 25%, rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.08) 42%),
+    radial-gradient(circle at 60% 70%, rgba(59, 63, 70, 0.18), rgba(59, 63, 70, 0.02) 58%);
+  filter: blur(10px);
+  transform: translate(14px, 10px) scale(1.05);
 }
 
-.hero-photo {
-  position: absolute;
-  inset: auto 50% 0 auto;
-  transform: translateX(50%);
-  z-index: 2;
-  width: min(355px, 68vw);
-  height: auto;
-  aspect-ratio: 1 / 1.18;
+.hero-portrait {
+  position: relative;
+  width: min(270px, 62vw);
+  aspect-ratio: 1 / 1;
   object-fit: cover;
   object-position: center;
-  border-radius: 30px;
-  border: 1px solid rgba(255,255,255,0.4);
-  box-shadow: 0 18px 45px rgba(20, 20, 20, 0.22);
+  border-radius: 999px;
+  border: 8px solid rgba(255, 255, 255, 0.76);
+  background: var(--surface);
+  box-shadow: 0 22px 55px rgba(20, 20, 20, 0.16);
 }
 
 .photo-note {
   position: relative;
   margin-top: 1rem;
-  max-width: 400px;
+  max-width: 330px;
   color: var(--muted);
   font-size: 0.82rem;
   text-align: center;
+}
+
+.closing-photo-section {
+  padding-top: 4rem;
+}
+
+.group-photo-card {
+  position: relative;
+  width: 100%;
+  min-height: clamp(260px, 34vw, 430px);
+  border-radius: 34px;
+  overflow: hidden;
+  border: 1px solid rgba(221, 212, 200, 0.9);
+  background: var(--surface);
+  box-shadow: 0 22px 60px rgba(20, 20, 20, 0.12);
+}
+
+.group-photo-blur {
+  position: absolute;
+  inset: -8%;
+  background-image: url('group-photo.jpg');
+  background-size: cover;
+  background-position: center;
+  filter: blur(22px) saturate(1.05);
+  transform: scale(1.12);
+  opacity: 0.88;
+}
+
+.group-photo-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(247,244,239,0.38), rgba(247,244,239,0.06), rgba(31,41,51,0.18)),
+    radial-gradient(circle at 20% 20%, rgba(255,255,255,0.38), rgba(255,255,255,0.02) 40%);
+  z-index: 1;
+}
+
+.group-photo {
+  position: absolute;
+  z-index: 2;
+  inset: 50% auto auto 50%;
+  transform: translate(-50%, -50%);
+  width: min(92%, 1180px);
+  height: 78%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 24px;
+  border: 1px solid rgba(255,255,255,0.42);
+  box-shadow: 0 16px 42px rgba(20, 20, 20, 0.18);
 }
 
 .eyebrow {
@@ -382,19 +409,24 @@ footer {
     grid-template-columns: 1fr;
   }
 
-  .hero-photo-panel {
+  .hero-portrait-panel {
     align-items: flex-start;
   }
 
-  .hero-cinematic-card {
-    width: min(420px, 92vw);
-  }
-
-  .hero-photo {
-    width: min(320px, 78vw);
+  .hero-portrait {
+    width: min(240px, 62vw);
   }
 
   .photo-note {
     text-align: left;
+  }
+
+  .group-photo-card {
+    min-height: 260px;
+  }
+
+  .group-photo {
+    width: 92%;
+    height: 76%;
   }
 }

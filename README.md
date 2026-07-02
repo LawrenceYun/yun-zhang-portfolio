@@ -1,29 +1,43 @@
 # Yun Zhang Portfolio Website
 
-This version updates the homepage portrait into a larger cinematic-style image treatment.
+This version supports two photos:
 
-## What changed
+1. A small circular individual portrait on the homepage.
+2. A wide horizontal group photo near the end of the portfolio.
 
-The homepage now uses:
+## Individual profile photo
 
-- a large portrait panel on the right side
-- a blurred version of `profile.jpg` as the background
-- the same `profile.jpg` layered in the foreground
-- a soft overlay to create a cinematic / editorial effect
+The homepage portrait uses this file:
 
-This creates the effect of:
-- a larger image area
-- background blur
-- a more polished visual style
-- a more modern homepage hero
+`profile.jpg`
 
-## How to use your own photo
+Recommended photo:
+- individual portrait
+- square or vertical photo
+- clean background
+- clear face
+- professional or semi-professional style
 
-1. Rename your professional photo to `profile.jpg`
-2. Upload it to the repository root
-3. Replace the placeholder `profile.jpg`
-4. Commit changes
-5. Wait 1–5 minutes for GitHub Pages to update
+Upload your photo to the repository root and name it exactly:
+
+`profile.jpg`
+
+## Wide group photo
+
+The wide image near the end uses this file:
+
+`group-photo.jpg`
+
+Recommended photo:
+- horizontal group photo
+- campus / team / research / leadership / community setting
+- wide composition
+- not too dark
+- not too crowded if possible
+
+Upload your group photo to the repository root and name it exactly:
+
+`group-photo.jpg`
 
 ## Repository root should contain
 
@@ -31,8 +45,21 @@ This creates the effect of:
 - `style.css`
 - `README.md`
 - `profile.jpg`
+- `group-photo.jpg`
 - `Yun_Zhang_Resume.pdf`
 - `Knee_Xray_Report.pdf`
+
+## Resume PDF
+
+The Resume buttons link to:
+
+`Yun_Zhang_Resume.pdf`
+
+## Knee X-ray Report PDF
+
+The Knee X-ray Report button links to:
+
+`Knee_Xray_Report.pdf`
 
 ## Still need to replace
 
