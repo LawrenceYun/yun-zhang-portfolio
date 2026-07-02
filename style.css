@@ -417,7 +417,7 @@ footer {
 }
 }
 
-/* ===== FINAL PHOTO OVERRIDE v17: circular profile frame + centered group photo ===== */
+/* ===== FINAL PHOTO OVERRIDE v18: LinkedIn + softer circular profile ===== */
 
 /* Hero layout kept balanced with original design. */
 .hero-layout {
@@ -425,8 +425,8 @@ footer {
   gap: 3rem !important;
 }
 
-/* Personal photo: make the FRAME clearly circular.
-   The photo itself is not cropped into a circle; it sits inside the circular frame. */
+/* Personal photo: return to a softer circular visual.
+   The image edge is feathered so it does not look like a hard rectangle inside the circle. */
 .hero-portrait-panel {
   position: relative !important;
   display: flex !important;
@@ -439,46 +439,53 @@ footer {
   width: min(350px, 70vw) !important;
   aspect-ratio: 1 / 1 !important;
   border-radius: 999px !important;
-  border: 8px solid rgba(255, 255, 255, 0.78) !important;
-  background:
-    radial-gradient(circle at 35% 25%, rgba(255,255,255,0.72), rgba(255,255,255,0.15) 42%),
-    linear-gradient(145deg, rgba(255,255,255,0.34), rgba(239,233,223,0.62)) !important;
-  box-shadow: 0 22px 55px rgba(20, 20, 20, 0.16) !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-  overflow: visible !important;
+  overflow: hidden !important;
+  background:
+    radial-gradient(circle at 35% 25%, rgba(255,255,255,0.65), rgba(255,255,255,0.12) 42%),
+    linear-gradient(145deg, rgba(255,255,255,0.28), rgba(239,233,223,0.62)) !important;
+  border: 8px solid rgba(255, 255, 255, 0.76) !important;
+  box-shadow: 0 22px 55px rgba(20, 20, 20, 0.16) !important;
 }
 
 .profile-circle-glow {
   position: absolute !important;
-  inset: -10px !important;
+  inset: -12px !important;
   border-radius: 999px !important;
   background:
-    radial-gradient(circle at 35% 25%, rgba(255, 255, 255, 0.86), rgba(255, 255, 255, 0.10) 42%),
+    radial-gradient(circle at 35% 25%, rgba(255, 255, 255, 0.86), rgba(255, 255, 255, 0.08) 42%),
     radial-gradient(circle at 60% 70%, rgba(59, 63, 70, 0.18), rgba(59, 63, 70, 0.02) 58%) !important;
-  filter: blur(10px) !important;
-  transform: translate(12px, 10px) scale(1.03) !important;
+  filter: blur(12px) !important;
+  transform: translate(10px, 8px) scale(1.03) !important;
   z-index: 0 !important;
 }
 
+/* Softer than a hard rectangular portrait:
+   - fills the circular frame more naturally
+   - circular/feathered edge
+   - no rectangular border
+*/
 .hero-portrait {
   position: relative !important;
   z-index: 1 !important;
   display: block !important;
-  max-width: 82% !important;
-  max-height: 82% !important;
-  width: auto !important;
-  height: auto !important;
-  object-fit: contain !important;
+  width: 96% !important;
+  height: 96% !important;
+  max-width: none !important;
+  max-height: none !important;
+  object-fit: cover !important;
   object-position: center !important;
-  border-radius: 14px !important;
+  border-radius: 999px !important;
   border: none !important;
   background: transparent !important;
   box-shadow: none !important;
+  -webkit-mask-image: radial-gradient(circle, #000 0%, #000 72%, rgba(0,0,0,0.82) 84%, transparent 100%) !important;
+  mask-image: radial-gradient(circle, #000 0%, #000 72%, rgba(0,0,0,0.82) 84%, transparent 100%) !important;
 }
 
-/* Disable old portrait classes if they still exist in the earlier stylesheet. */
+/* Disable older portrait helper classes if still present. */
 .portrait-circle,
 .portrait-glow {
   width: auto !important;
@@ -488,8 +495,7 @@ footer {
   box-shadow: none !important;
 }
 
-/* Group photo: thin blurred frame, image directly inside, centered by normal document flow.
-   No absolute foreground positioning, no grey inner box, no second region. */
+/* Group photo unchanged: thin blurred frame, image directly inside, naturally centered. */
 .wide-photo-strip {
   position: relative !important;
   width: min(1120px, 86vw) !important;
@@ -509,7 +515,7 @@ footer {
   content: "" !important;
   position: absolute !important;
   inset: -14px !important;
-  background-image: url('group-photo.jpg?v=17') !important;
+  background-image: url('group-photo.jpg?v=18') !important;
   background-size: cover !important;
   background-position: center center !important;
   filter: blur(16px) saturate(1.04) !important;
