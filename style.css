@@ -417,16 +417,14 @@ footer {
 }
 }
 
-/* ===== FINAL PHOTO OVERRIDE v19: profile zoomed out, group unchanged ===== */
+/* ===== FINAL PHOTO OVERRIDE v20: certificate before group photo ===== */
 
-/* Hero layout kept balanced with original design. */
+/* Hero/profile kept from v19: soft circular frame with more visible image area. */
 .hero-layout {
   grid-template-columns: minmax(0, 1.28fr) minmax(320px, 0.72fr) !important;
   gap: 3rem !important;
 }
 
-/* Personal photo: circular soft frame, but the photo is less zoomed-in.
-   The blurred circular background keeps the portrait from looking like a hard rectangle. */
 .hero-portrait-panel {
   position: relative !important;
   display: flex !important;
@@ -455,7 +453,7 @@ footer {
   position: absolute !important;
   inset: -12px !important;
   border-radius: 999px !important;
-  background-image: url('profile.jpg?v=19') !important;
+  background-image: url('profile.jpg?v=20') !important;
   background-size: cover !important;
   background-position: center center !important;
   filter: blur(18px) saturate(1.04) !important;
@@ -476,9 +474,6 @@ footer {
   z-index: 0 !important;
 }
 
-/* Main change from v18:
-   v18 was cover/96%, which zoomed in.
-   v19 uses contain/86%, so it shows much more of the original photo from the same center. */
 .hero-portrait {
   position: relative !important;
   z-index: 1 !important;
@@ -497,7 +492,6 @@ footer {
   mask-image: radial-gradient(ellipse at center, #000 0%, #000 62%, rgba(0,0,0,0.84) 78%, transparent 100%) !important;
 }
 
-/* Disable older portrait helper classes if still present. */
 .portrait-circle,
 .portrait-glow {
   width: auto !important;
@@ -507,7 +501,66 @@ footer {
   box-shadow: none !important;
 }
 
-/* Group photo unchanged: thin blurred frame, image directly inside, naturally centered. */
+/* Certificate block: formal white card, before the group photo. */
+.certificate-section {
+  padding: 1.5rem 7vw 4.5rem !important;
+}
+
+.certificate-heading {
+  max-width: 900px !important;
+  margin: 0 auto 1.4rem !important;
+  text-align: center !important;
+}
+
+.certificate-heading h2 {
+  margin: 0.2rem 0 0.45rem !important;
+}
+
+.certificate-heading p:last-child {
+  color: var(--muted) !important;
+  margin: 0 !important;
+}
+
+.certificate-frame {
+  position: relative !important;
+  width: min(1040px, 86vw) !important;
+  margin: 0 auto !important;
+  padding: clamp(10px, 1vw, 16px) !important;
+  border-radius: 24px !important;
+  overflow: hidden !important;
+  border: 1px solid rgba(221, 212, 200, 0.95) !important;
+  background: rgba(255, 255, 255, 0.82) !important;
+  box-shadow: 0 16px 42px rgba(20, 20, 20, 0.10) !important;
+}
+
+.certificate-frame::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: -16px !important;
+  background-image: url('mit-idss-certificate.png?v=20') !important;
+  background-size: cover !important;
+  background-position: center center !important;
+  filter: blur(18px) saturate(0.92) brightness(1.08) !important;
+  transform: scale(1.06) !important;
+  opacity: 0.22 !important;
+  z-index: 0 !important;
+}
+
+.certificate-image {
+  position: relative !important;
+  z-index: 1 !important;
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  max-width: 100% !important;
+  object-fit: contain !important;
+  object-position: center center !important;
+  border-radius: 18px !important;
+  background: #fff !important;
+  box-shadow: 0 8px 24px rgba(20, 20, 20, 0.08) !important;
+}
+
+/* Group photo kept: thin blurred frame, image directly inside. */
 .wide-photo-strip {
   position: relative !important;
   width: min(1120px, 86vw) !important;
@@ -527,7 +580,7 @@ footer {
   content: "" !important;
   position: absolute !important;
   inset: -14px !important;
-  background-image: url('group-photo.jpg?v=19') !important;
+  background-image: url('group-photo.jpg?v=20') !important;
   background-size: cover !important;
   background-position: center center !important;
   filter: blur(16px) saturate(1.04) !important;
@@ -575,6 +628,15 @@ footer {
   .hero-portrait {
     width: 86% !important;
     height: 86% !important;
+  }
+
+  .certificate-section {
+    padding: 1.5rem 7vw 3.5rem !important;
+  }
+
+  .certificate-frame {
+    width: 88vw !important;
+    padding: 8px !important;
   }
 
   .wide-photo-strip {
