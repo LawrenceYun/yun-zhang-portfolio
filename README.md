@@ -1,19 +1,21 @@
 # Yun Zhang Portfolio Website
 
-This version cleans the photo layout:
+This version fixes the photo display:
 
-- Removes visible placeholder instructions from the live page.
-- Keeps a small circular individual portrait on the homepage.
-- Adds a natural wide group photo strip near the bottom without extra text or headings.
+- Removes all visible placeholder text from the live page.
+- Removes the "Beyond the Resume / Collaboration and Community" section text.
+- Keeps only a natural wide group photo before Contact.
+- Changes the circular profile photo to show more of the original image with less cropping.
+- Changes the group photo to display the full image without zoom/crop.
 
 ## Required image filenames
 
 Upload your images to the repository root with these exact names:
 
-- `profile.jpg` for the circular individual portrait
-- `group-photo.jpg` for the wide group photo strip
+- `profile.jpg`
+- `group-photo.jpg`
 
-GitHub Pages is case-sensitive, so these names must match exactly.
+GitHub Pages is case-sensitive, so the filenames must match exactly.
 
 ## Repository root should contain
 
@@ -24,10 +26,3 @@ GitHub Pages is case-sensitive, so these names must match exactly.
 - `group-photo.jpg`
 - `Yun_Zhang_Resume.pdf`
 - `Knee_Xray_Report.pdf`
-
-## Still need to replace
-
-Search in `index.html` and replace:
-
-- `YOUR_LINKEDIN_LINK_HERE`
-- `YOUR_EMAIL_HERE`
