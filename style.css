@@ -417,115 +417,146 @@ footer {
 }
 }
 
-/* ===== FINAL PHOTO OVERRIDE v16: rectangular profile inside larger circle + clean group frame ===== */
+/* ===== FINAL PHOTO OVERRIDE v17: circular profile frame + centered group photo ===== */
 
-/* Profile area: keep the original circular visual, but do NOT crop the photo into a circle.
-   The circle is the frame/background; the photo remains a full rectangular image inside it. */
+/* Hero layout kept balanced with original design. */
 .hero-layout {
-  grid-template-columns: minmax(0, 1.28fr) minmax(320px, 0.72fr);
-  gap: 3rem;
+  grid-template-columns: minmax(0, 1.28fr) minmax(320px, 0.72fr) !important;
+  gap: 3rem !important;
 }
 
+/* Personal photo: make the FRAME clearly circular.
+   The photo itself is not cropped into a circle; it sits inside the circular frame. */
 .hero-portrait-panel {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  position: relative !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
 }
 
-.portrait-circle {
-  position: relative;
-  width: min(350px, 70vw); /* about 30% larger than the original 270px portrait */
-  aspect-ratio: 1 / 1;
-  border-radius: 999px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.portrait-glow {
-  position: absolute;
-  inset: 0;
-  border-radius: 999px;
+.profile-circle-frame {
+  position: relative !important;
+  width: min(350px, 70vw) !important;
+  aspect-ratio: 1 / 1 !important;
+  border-radius: 999px !important;
+  border: 8px solid rgba(255, 255, 255, 0.78) !important;
   background:
-    radial-gradient(circle at 35% 25%, rgba(255, 255, 255, 0.88), rgba(255, 255, 255, 0.10) 42%),
-    radial-gradient(circle at 60% 70%, rgba(59, 63, 70, 0.18), rgba(59, 63, 70, 0.02) 58%);
-  filter: blur(10px);
-  transform: translate(12px, 10px) scale(1.05);
+    radial-gradient(circle at 35% 25%, rgba(255,255,255,0.72), rgba(255,255,255,0.15) 42%),
+    linear-gradient(145deg, rgba(255,255,255,0.34), rgba(239,233,223,0.62)) !important;
+  box-shadow: 0 22px 55px rgba(20, 20, 20, 0.16) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  overflow: visible !important;
+}
+
+.profile-circle-glow {
+  position: absolute !important;
+  inset: -10px !important;
+  border-radius: 999px !important;
+  background:
+    radial-gradient(circle at 35% 25%, rgba(255, 255, 255, 0.86), rgba(255, 255, 255, 0.10) 42%),
+    radial-gradient(circle at 60% 70%, rgba(59, 63, 70, 0.18), rgba(59, 63, 70, 0.02) 58%) !important;
+  filter: blur(10px) !important;
+  transform: translate(12px, 10px) scale(1.03) !important;
+  z-index: 0 !important;
 }
 
 .hero-portrait {
-  position: relative;
-  z-index: 1;
-  display: block;
-  max-width: 82%;
-  max-height: 82%;
-  width: auto;
-  height: auto;
-  object-fit: contain;
-  object-position: center;
-  border-radius: 18px;
-  border: 7px solid rgba(255, 255, 255, 0.76);
-  background: rgba(255, 255, 255, 0.72);
-  box-shadow: 0 20px 48px rgba(20, 20, 20, 0.15);
+  position: relative !important;
+  z-index: 1 !important;
+  display: block !important;
+  max-width: 82% !important;
+  max-height: 82% !important;
+  width: auto !important;
+  height: auto !important;
+  object-fit: contain !important;
+  object-position: center !important;
+  border-radius: 14px !important;
+  border: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
 }
 
-/* Group photo: a thin soft blurred frame; the image sits directly inside it at its own ratio.
-   No grey inner box, no second small box, no crop. */
+/* Disable old portrait classes if they still exist in the earlier stylesheet. */
+.portrait-circle,
+.portrait-glow {
+  width: auto !important;
+  transform: none !important;
+  background: none !important;
+  filter: none !important;
+  box-shadow: none !important;
+}
+
+/* Group photo: thin blurred frame, image directly inside, centered by normal document flow.
+   No absolute foreground positioning, no grey inner box, no second region. */
 .wide-photo-strip {
-  position: relative;
-  width: min(1120px, 86vw);
-  margin: 0 auto 5.5rem;
-  padding: clamp(7px, 0.9vw, 12px);
-  border-radius: 24px;
-  overflow: hidden;
-  border: 1px solid rgba(221, 212, 200, 0.95);
-  background: rgba(255, 255, 255, 0.22);
-  box-shadow: 0 16px 42px rgba(20, 20, 20, 0.10);
+  position: relative !important;
+  width: min(1120px, 86vw) !important;
+  margin: 0 auto 5.5rem !important;
+  padding: clamp(7px, 0.9vw, 12px) !important;
+  border-radius: 24px !important;
+  overflow: hidden !important;
+  border: 1px solid rgba(221, 212, 200, 0.95) !important;
+  background: rgba(255, 255, 255, 0.24) !important;
+  box-shadow: 0 16px 42px rgba(20, 20, 20, 0.10) !important;
+  display: block !important;
+  height: auto !important;
+  min-height: 0 !important;
 }
 
 .wide-photo-strip::before {
-  content: "";
-  position: absolute;
-  inset: -16px;
-  background-image: url('group-photo.jpg?v=16');
-  background-size: cover;
-  background-position: center;
-  filter: blur(16px) saturate(1.04);
-  transform: scale(1.06);
-  opacity: 0.62;
-  z-index: 0;
+  content: "" !important;
+  position: absolute !important;
+  inset: -14px !important;
+  background-image: url('group-photo.jpg?v=17') !important;
+  background-size: cover !important;
+  background-position: center center !important;
+  filter: blur(16px) saturate(1.04) !important;
+  transform: scale(1.06) !important;
+  opacity: 0.62 !important;
+  z-index: 0 !important;
+}
+
+.wide-photo-blur,
+.wide-photo-overlay {
+  display: none !important;
 }
 
 .wide-photo {
-  position: relative;
-  z-index: 1;
-  display: block;
-  width: 100%;
-  height: auto;
-  object-fit: contain;
-  object-position: center;
-  border-radius: 18px;
-  box-shadow: 0 8px 24px rgba(20, 20, 20, 0.10);
+  position: relative !important;
+  z-index: 1 !important;
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  max-width: 100% !important;
+  object-fit: contain !important;
+  object-position: center center !important;
+  inset: auto !important;
+  transform: none !important;
+  border-radius: 18px !important;
+  border: none !important;
+  background: transparent !important;
+  box-shadow: 0 8px 24px rgba(20, 20, 20, 0.10) !important;
 }
 
 @media (max-width: 900px) {
   .hero-layout {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
   }
 
   .hero-portrait-panel {
-    justify-content: flex-start;
-    margin-top: 1.5rem;
+    justify-content: flex-start !important;
+    margin-top: 1.5rem !important;
   }
 
-  .portrait-circle {
-    width: min(310px, 74vw);
+  .profile-circle-frame {
+    width: min(310px, 74vw) !important;
   }
 
   .wide-photo-strip {
-    width: 88vw;
-    padding: 7px;
-    margin-bottom: 4rem;
+    width: 88vw !important;
+    padding: 7px !important;
+    margin-bottom: 4rem !important;
   }
 }
