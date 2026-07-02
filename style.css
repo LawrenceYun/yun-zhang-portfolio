@@ -417,7 +417,7 @@ footer {
 }
 }
 
-/* ===== FINAL PHOTO OVERRIDE v18: LinkedIn + softer circular profile ===== */
+/* ===== FINAL PHOTO OVERRIDE v19: profile zoomed out, group unchanged ===== */
 
 /* Hero layout kept balanced with original design. */
 .hero-layout {
@@ -425,8 +425,8 @@ footer {
   gap: 3rem !important;
 }
 
-/* Personal photo: return to a softer circular visual.
-   The image edge is feathered so it does not look like a hard rectangle inside the circle. */
+/* Personal photo: circular soft frame, but the photo is less zoomed-in.
+   The blurred circular background keeps the portrait from looking like a hard rectangle. */
 .hero-portrait-panel {
   position: relative !important;
   display: flex !important;
@@ -450,6 +450,20 @@ footer {
   box-shadow: 0 22px 55px rgba(20, 20, 20, 0.16) !important;
 }
 
+.profile-circle-frame::after {
+  content: "" !important;
+  position: absolute !important;
+  inset: -12px !important;
+  border-radius: 999px !important;
+  background-image: url('profile.jpg?v=19') !important;
+  background-size: cover !important;
+  background-position: center center !important;
+  filter: blur(18px) saturate(1.04) !important;
+  transform: scale(1.10) !important;
+  opacity: 0.34 !important;
+  z-index: 0 !important;
+}
+
 .profile-circle-glow {
   position: absolute !important;
   inset: -12px !important;
@@ -462,27 +476,25 @@ footer {
   z-index: 0 !important;
 }
 
-/* Softer than a hard rectangular portrait:
-   - fills the circular frame more naturally
-   - circular/feathered edge
-   - no rectangular border
-*/
+/* Main change from v18:
+   v18 was cover/96%, which zoomed in.
+   v19 uses contain/86%, so it shows much more of the original photo from the same center. */
 .hero-portrait {
   position: relative !important;
   z-index: 1 !important;
   display: block !important;
-  width: 96% !important;
-  height: 96% !important;
+  width: 86% !important;
+  height: 86% !important;
   max-width: none !important;
   max-height: none !important;
-  object-fit: cover !important;
-  object-position: center !important;
-  border-radius: 999px !important;
+  object-fit: contain !important;
+  object-position: center center !important;
+  border-radius: 22px !important;
   border: none !important;
   background: transparent !important;
   box-shadow: none !important;
-  -webkit-mask-image: radial-gradient(circle, #000 0%, #000 72%, rgba(0,0,0,0.82) 84%, transparent 100%) !important;
-  mask-image: radial-gradient(circle, #000 0%, #000 72%, rgba(0,0,0,0.82) 84%, transparent 100%) !important;
+  -webkit-mask-image: radial-gradient(ellipse at center, #000 0%, #000 62%, rgba(0,0,0,0.84) 78%, transparent 100%) !important;
+  mask-image: radial-gradient(ellipse at center, #000 0%, #000 62%, rgba(0,0,0,0.84) 78%, transparent 100%) !important;
 }
 
 /* Disable older portrait helper classes if still present. */
@@ -515,7 +527,7 @@ footer {
   content: "" !important;
   position: absolute !important;
   inset: -14px !important;
-  background-image: url('group-photo.jpg?v=18') !important;
+  background-image: url('group-photo.jpg?v=19') !important;
   background-size: cover !important;
   background-position: center center !important;
   filter: blur(16px) saturate(1.04) !important;
@@ -558,6 +570,11 @@ footer {
 
   .profile-circle-frame {
     width: min(310px, 74vw) !important;
+  }
+
+  .hero-portrait {
+    width: 86% !important;
+    height: 86% !important;
   }
 
   .wide-photo-strip {
