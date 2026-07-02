@@ -116,62 +116,46 @@ nav a:hover {
   box-shadow: 0 22px 55px rgba(20, 20, 20, 0.16);
 }
 
-.photo-note {
+.wide-photo-strip {
   position: relative;
-  margin-top: 1rem;
-  max-width: 330px;
-  color: var(--muted);
-  font-size: 0.82rem;
-  text-align: center;
-}
-
-.closing-photo-section {
-  padding-top: 4rem;
-}
-
-.group-photo-card {
-  position: relative;
-  width: 100%;
-  min-height: clamp(260px, 34vw, 430px);
-  border-radius: 34px;
+  margin: 0 7vw 5.5rem;
+  min-height: clamp(220px, 28vw, 380px);
+  border-radius: 28px;
   overflow: hidden;
-  border: 1px solid rgba(221, 212, 200, 0.9);
-  background: var(--surface);
-  box-shadow: 0 22px 60px rgba(20, 20, 20, 0.12);
+  background: var(--surface-alt);
 }
 
-.group-photo-blur {
+.wide-photo-blur {
   position: absolute;
-  inset: -8%;
+  inset: -10%;
   background-image: url('group-photo.jpg');
   background-size: cover;
   background-position: center;
-  filter: blur(22px) saturate(1.05);
-  transform: scale(1.12);
-  opacity: 0.88;
+  filter: blur(24px) saturate(1.05);
+  transform: scale(1.14);
+  opacity: 0.82;
 }
 
-.group-photo-overlay {
+.wide-photo-overlay {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(90deg, rgba(247,244,239,0.38), rgba(247,244,239,0.06), rgba(31,41,51,0.18)),
-    radial-gradient(circle at 20% 20%, rgba(255,255,255,0.38), rgba(255,255,255,0.02) 40%);
+    linear-gradient(90deg, rgba(247,244,239,0.30), rgba(247,244,239,0.03), rgba(31,41,51,0.10)),
+    radial-gradient(circle at 18% 20%, rgba(255,255,255,0.30), rgba(255,255,255,0.02) 44%);
   z-index: 1;
 }
 
-.group-photo {
+.wide-photo {
   position: absolute;
   z-index: 2;
   inset: 50% auto auto 50%;
   transform: translate(-50%, -50%);
-  width: min(92%, 1180px);
-  height: 78%;
+  width: 94%;
+  height: 80%;
   object-fit: cover;
   object-position: center;
-  border-radius: 24px;
-  border: 1px solid rgba(255,255,255,0.42);
-  box-shadow: 0 16px 42px rgba(20, 20, 20, 0.18);
+  border-radius: 22px;
+  box-shadow: 0 16px 40px rgba(20, 20, 20, 0.16);
 }
 
 .eyebrow {
@@ -417,16 +401,14 @@ footer {
     width: min(240px, 62vw);
   }
 
-  .photo-note {
-    text-align: left;
+  .wide-photo-strip {
+    margin-left: 7vw;
+    margin-right: 7vw;
+    min-height: 230px;
   }
 
-  .group-photo-card {
-    min-height: 260px;
-  }
-
-  .group-photo {
-    width: 92%;
-    height: 76%;
+  .wide-photo {
+    width: 94%;
+    height: 78%;
   }
 }

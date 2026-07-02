@@ -1,43 +1,19 @@
 # Yun Zhang Portfolio Website
 
-This version supports two photos:
+This version cleans the photo layout:
 
-1. A small circular individual portrait on the homepage.
-2. A wide horizontal group photo near the end of the portfolio.
+- Removes visible placeholder instructions from the live page.
+- Keeps a small circular individual portrait on the homepage.
+- Adds a natural wide group photo strip near the bottom without extra text or headings.
 
-## Individual profile photo
+## Required image filenames
 
-The homepage portrait uses this file:
+Upload your images to the repository root with these exact names:
 
-`profile.jpg`
+- `profile.jpg` for the circular individual portrait
+- `group-photo.jpg` for the wide group photo strip
 
-Recommended photo:
-- individual portrait
-- square or vertical photo
-- clean background
-- clear face
-- professional or semi-professional style
-
-Upload your photo to the repository root and name it exactly:
-
-`profile.jpg`
-
-## Wide group photo
-
-The wide image near the end uses this file:
-
-`group-photo.jpg`
-
-Recommended photo:
-- horizontal group photo
-- campus / team / research / leadership / community setting
-- wide composition
-- not too dark
-- not too crowded if possible
-
-Upload your group photo to the repository root and name it exactly:
-
-`group-photo.jpg`
+GitHub Pages is case-sensitive, so these names must match exactly.
 
 ## Repository root should contain
 
@@ -48,18 +24,6 @@ Upload your group photo to the repository root and name it exactly:
 - `group-photo.jpg`
 - `Yun_Zhang_Resume.pdf`
 - `Knee_Xray_Report.pdf`
-
-## Resume PDF
-
-The Resume buttons link to:
-
-`Yun_Zhang_Resume.pdf`
-
-## Knee X-ray Report PDF
-
-The Knee X-ray Report button links to:
-
-`Knee_Xray_Report.pdf`
 
 ## Still need to replace
 
