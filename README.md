@@ -1,28 +1,32 @@
 # Yun Zhang Portfolio Website
 
-This version fixes the photo display:
+This version tunes the photo layout:
 
-- Removes all visible placeholder text from the live page.
-- Removes the "Beyond the Resume / Collaboration and Community" section text.
-- Keeps only a natural wide group photo before Contact.
-- Changes the circular profile photo to show more of the original image with less cropping.
-- Changes the group photo to display the full image without zoom/crop.
+## Homepage portrait
+
+- The circular portrait is about 30% larger than the previous small version.
+- The portrait fills the circular frame more naturally.
+- The image position is shifted slightly upward with `object-position: center 32%` so photos where the face is in the upper half display better.
+
+If your face still appears too low or too high, edit this line in `style.css`:
+
+```css
+object-position: center 32%;
+```
+
+Try:
+- `center 25%` to show more upper part of the photo
+- `center 40%` to show more lower part of the photo
+
+## Group photo
+
+- The group photo keeps the framed + blurred background style.
+- The main group image uses `object-fit: contain`, so the full image is shown.
+- The group photo area is slightly smaller and more controlled than the previous oversized version.
 
 ## Required image filenames
 
-Upload your images to the repository root with these exact names:
+Upload images to the repository root with these exact names:
 
 - `profile.jpg`
 - `group-photo.jpg`
-
-GitHub Pages is case-sensitive, so the filenames must match exactly.
-
-## Repository root should contain
-
-- `index.html`
-- `style.css`
-- `README.md`
-- `profile.jpg`
-- `group-photo.jpg`
-- `Yun_Zhang_Resume.pdf`
-- `Knee_Xray_Report.pdf`
