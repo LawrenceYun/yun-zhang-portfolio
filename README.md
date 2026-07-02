@@ -58,7 +58,7 @@ Search in `index.html` and replace:
 ## GitHub Pages setup
 
 Upload the following files to the root of a GitHub repository:
-
+Portfolio website deployed with GitHub Pages.
 - `index.html`
 - `style.css`
 - `README.md`
