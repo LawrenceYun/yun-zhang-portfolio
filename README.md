@@ -1,32 +1,22 @@
 # Yun Zhang Portfolio Website
 
-This version tunes the photo layout:
+This v14 version makes the photo changes more obvious and forces browser cache refresh.
 
-## Homepage portrait
+## Changed
 
-- The circular portrait is about 30% larger than the previous small version.
-- The portrait fills the circular frame more naturally.
-- The image position is shifted slightly upward with `object-position: center 32%` so photos where the face is in the upper half display better.
+- The homepage circular portrait is visibly larger.
+- The portrait image is positioned higher: `object-position: center 24%`.
+- The group photo keeps the framed + blurred background design.
+- The group photo foreground uses `object-fit: contain`, so the full image is shown.
+- The group photo area is controlled in size with `width: min(1080px, 82vw)`.
+- `style.css?v=14`, `profile.jpg?v=14`, and `group-photo.jpg?v=14` are used to avoid browser cache showing old versions.
 
-If your face still appears too low or too high, edit this line in `style.css`:
+## Upload
 
-```css
-object-position: center 32%;
-```
+Replace these files in your GitHub Pages repository:
 
-Try:
-- `center 25%` to show more upper part of the photo
-- `center 40%` to show more lower part of the photo
+- `index.html`
+- `style.css`
+- `README.md`
 
-## Group photo
-
-- The group photo keeps the framed + blurred background style.
-- The main group image uses `object-fit: contain`, so the full image is shown.
-- The group photo area is slightly smaller and more controlled than the previous oversized version.
-
-## Required image filenames
-
-Upload images to the repository root with these exact names:
-
-- `profile.jpg`
-- `group-photo.jpg`
+If you already uploaded your real photos, do not overwrite them.
